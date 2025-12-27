@@ -1,0 +1,7 @@
+{
+  "name": "Portal de Transporte Escolar - School Pass",
+  "description": "Uma plataforma completa para gestão de carteirinhas de transporte escolar, permitindo cadastro de alunos, visualização de passes e painel administrativo.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

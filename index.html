@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Pass - Portal de Transporte</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-hover": "#106cc9",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2632",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .dashed-line {
+            background-image: linear-gradient(to right, #cbd5e1 50%, rgba(255, 255, 255, 0) 0%);
+            background-position: bottom;
+            background-size: 10px 1px;
+            background-repeat: repeat-x;
+        }
+        .dark .dashed-line {
+            background-image: linear-gradient(to right, #475569 50%, rgba(255, 255, 255, 0) 0%);
+        }
+        
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(0.5);
+        }
+
+        body {
+            min-height: 100vh;
+        }
+
+        /* Estilos de Impressão Otimizados para PDF */
+        @media print {
+            @page {
+                margin: 0;
+                size: auto;
+            }
+            body {
+                background-color: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            header, footer, button, .no-print {
+                display: none !important;
+            }
+            #printable-card-area {
+                padding: 20px !important;
+                background-color: white !important;
+            }
+            .max-w-md {
+                max-width: 100% !important;
+                box-shadow: none !important;
+                border: none !important;
+            }
+            .bg-background-light, .dark\:bg-background-dark {
+                background-color: white !important;
+            }
+            /* Garantir que cores apareçam mesmo em dark mode simulado */
+            .dark .bg-white { background-color: white !important; color: black !important; }
+            .dark .text-slate-900 { color: #0f172a !important; }
+            .dark .text-slate-500 { color: #64748b !important; }
+            .dark .bg-slate-50\/50 { background-color: #f8fafc !important; }
+            .dark .border-slate-200 { border-color: #e2e8f0 !important; }
+            
+            .dashed-line {
+                background-image: linear-gradient(to right, #cbd5e1 50%, rgba(255, 255, 255, 0) 0%) !important;
+            }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white transition-colors duration-200">
+    <div id="root"></div>
+</body>
+</html>
